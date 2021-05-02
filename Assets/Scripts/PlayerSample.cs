@@ -10,6 +10,11 @@ public class PlayerSample : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        Weapon weapon1 = new Weapon(100,"Klash");
+        Weapon weapon2 = new Weapon(200,"G3");
+
+        weapon1.Weapons();
+        weapon2.Weapons();
         
     }
 
@@ -26,5 +31,20 @@ public class PlayerSample : MonoBehaviour
             }
         }
         
+    }
+}
+public class Weapon
+{
+    public int price;
+    public string name;
+
+    public Weapon(int myprice, string myname)
+    {
+        price = myprice;
+        name = myname;
+    }
+    public void Weapons()
+    {
+        Debug.Log($"{name} is a weapon which costs {price}");
     }
 }
